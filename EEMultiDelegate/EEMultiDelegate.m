@@ -57,7 +57,7 @@
         }
     }
     dispatch_semaphore_signal(_semaphore);
-
+    
     return result? : [super methodSignatureForSelector:selector];
 }
 
@@ -127,14 +127,22 @@
             [dupInvocation setArgument:&value atIndex:i];
         }
         else if (*type == '@') {
+            // type of [object / block], such as 'NSString *' 'void(^)(NSInteger)'
             void *value;
             [invocation getArgument:&value atIndex:i];
             [dupInvocation setArgument:&value atIndex:i];
         }
         else if (*type == '^') {
-            void *block;
-            [invocation getArgument:&block atIndex:i];
-            [dupInvocation setArgument:&block atIndex:i];
+            // type of [pointer] , when user '&' to get the address, such as '&intValue' '&(NSString *)'
+            void *pointer;
+            [invocation getArgument:&pointer atIndex:i];
+            [dupInvocation setArgument:&pointer atIndex:i];
+        }
+        else if (*type == ':') {
+            // type of [SEL] , such as '@selector(setValue:forKey:)'
+            void *value;
+            [invocation getArgument:&value atIndex:i];
+            [dupInvocation setArgument:&value atIndex:i];
         }
         else {
             NSString *selectorStr = NSStringFromSelector(selector);
