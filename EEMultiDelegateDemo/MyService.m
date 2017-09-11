@@ -28,7 +28,7 @@
     NSString *newMessage = [NSString stringWithFormat:@"message %ld", (long)count];
     NSLog(@"receive new message : %@", newMessage);
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_global_queue(0, 0), ^{
-        // call multicast delegates
+        // call method
         [(id<MessageReceiveDelegate>)_multiDelegate receiveMessage:newMessage];
     });
     count ++;

@@ -7,19 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		182AD2C31F66250000414E6E /* EEMultiDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 182AD2C21F66250000414E6E /* EEMultiDelegate.m */; };
 		3CB7B7151F63911C000DBF9C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CB7B7141F63911C000DBF9C /* main.m */; };
 		3CB7B7181F63911C000DBF9C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CB7B7171F63911C000DBF9C /* AppDelegate.m */; };
 		3CB7B71B1F63911C000DBF9C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CB7B71A1F63911C000DBF9C /* ViewController.m */; };
 		3CB7B71E1F63911C000DBF9C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3CB7B71C1F63911C000DBF9C /* Main.storyboard */; };
 		3CB7B7201F63911C000DBF9C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3CB7B71F1F63911C000DBF9C /* Assets.xcassets */; };
 		3CB7B7231F63911C000DBF9C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3CB7B7211F63911C000DBF9C /* LaunchScreen.storyboard */; };
-		3CB7B72D1F63914D000DBF9C /* EEMultiDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CB7B72C1F63914D000DBF9C /* EEMultiDelegate.m */; };
 		3CB7B7301F639257000DBF9C /* MyService.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CB7B72F1F639257000DBF9C /* MyService.m */; };
 		3CB7B7331F63995B000DBF9C /* MessagePanel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CB7B7321F63995B000DBF9C /* MessagePanel.m */; };
-		3CF510B01F63FC1F006A8C15 /* fsda.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CF510AF1F63FC1F006A8C15 /* fsda.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		182AD2C11F66250000414E6E /* EEMultiDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EEMultiDelegate.h; sourceTree = "<group>"; };
+		182AD2C21F66250000414E6E /* EEMultiDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EEMultiDelegate.m; sourceTree = "<group>"; };
 		3CB7B7101F63911C000DBF9C /* EEMultiDelegateDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EEMultiDelegateDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3CB7B7141F63911C000DBF9C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		3CB7B7161F63911C000DBF9C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -30,14 +31,10 @@
 		3CB7B71F1F63911C000DBF9C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3CB7B7221F63911C000DBF9C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3CB7B7241F63911C000DBF9C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3CB7B72B1F63914D000DBF9C /* EEMultiDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EEMultiDelegate.h; sourceTree = "<group>"; };
-		3CB7B72C1F63914D000DBF9C /* EEMultiDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EEMultiDelegate.m; sourceTree = "<group>"; };
 		3CB7B72E1F639257000DBF9C /* MyService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyService.h; sourceTree = "<group>"; };
 		3CB7B72F1F639257000DBF9C /* MyService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyService.m; sourceTree = "<group>"; };
 		3CB7B7311F63995B000DBF9C /* MessagePanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessagePanel.h; sourceTree = "<group>"; };
 		3CB7B7321F63995B000DBF9C /* MessagePanel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessagePanel.m; sourceTree = "<group>"; };
-		3CF510AE1F63FC1F006A8C15 /* fsda.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fsda.h; sourceTree = "<group>"; };
-		3CF510AF1F63FC1F006A8C15 /* fsda.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = fsda.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,9 +48,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		182AD2C01F66250000414E6E /* EEMultiDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				182AD2C11F66250000414E6E /* EEMultiDelegate.h */,
+				182AD2C21F66250000414E6E /* EEMultiDelegate.m */,
+			);
+			path = EEMultiDelegate;
+			sourceTree = "<group>";
+		};
 		3CB7B7071F63911C000DBF9C = {
 			isa = PBXGroup;
 			children = (
+				182AD2C01F66250000414E6E /* EEMultiDelegate */,
 				3CB7B7121F63911C000DBF9C /* EEMultiDelegateDemo */,
 				3CB7B7111F63911C000DBF9C /* Products */,
 			);
@@ -70,14 +77,11 @@
 		3CB7B7121F63911C000DBF9C /* EEMultiDelegateDemo */ = {
 			isa = PBXGroup;
 			children = (
-				3CB7B72A1F639123000DBF9C /* MultiDelegate */,
 				3CB7B7161F63911C000DBF9C /* AppDelegate.h */,
 				3CB7B7171F63911C000DBF9C /* AppDelegate.m */,
 				3CB7B72E1F639257000DBF9C /* MyService.h */,
 				3CB7B72F1F639257000DBF9C /* MyService.m */,
 				3CB7B7311F63995B000DBF9C /* MessagePanel.h */,
-				3CF510AE1F63FC1F006A8C15 /* fsda.h */,
-				3CF510AF1F63FC1F006A8C15 /* fsda.m */,
 				3CB7B7321F63995B000DBF9C /* MessagePanel.m */,
 				3CB7B7191F63911C000DBF9C /* ViewController.h */,
 				3CB7B71A1F63911C000DBF9C /* ViewController.m */,
@@ -96,15 +100,6 @@
 				3CB7B7141F63911C000DBF9C /* main.m */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		3CB7B72A1F639123000DBF9C /* MultiDelegate */ = {
-			isa = PBXGroup;
-			children = (
-				3CB7B72B1F63914D000DBF9C /* EEMultiDelegate.h */,
-				3CB7B72C1F63914D000DBF9C /* EEMultiDelegate.m */,
-			);
-			name = MultiDelegate;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -179,11 +174,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3CB7B72D1F63914D000DBF9C /* EEMultiDelegate.m in Sources */,
 				3CB7B71B1F63911C000DBF9C /* ViewController.m in Sources */,
 				3CB7B7331F63995B000DBF9C /* MessagePanel.m in Sources */,
 				3CB7B7181F63911C000DBF9C /* AppDelegate.m in Sources */,
-				3CF510B01F63FC1F006A8C15 /* fsda.m in Sources */,
+				182AD2C31F66250000414E6E /* EEMultiDelegate.m in Sources */,
 				3CB7B7151F63911C000DBF9C /* main.m in Sources */,
 				3CB7B7301F639257000DBF9C /* MyService.m in Sources */,
 			);
