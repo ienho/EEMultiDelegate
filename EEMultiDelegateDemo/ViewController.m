@@ -23,8 +23,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    UIButton *btn = [[UIButton alloc] initWithFrame:CGRectMake(100, 100, 120, 50)];
+
+    UIButton *btn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 120, 50)];
+    btn.center = CGPointMake(CGRectGetMidX(self.view.frame), CGRectGetMidY(self.view.frame));
     btn.backgroundColor = [UIColor blackColor];
     btn.tintColor = [UIColor whiteColor];
     [btn setTitle:@"receive" forState:UIControlStateNormal];

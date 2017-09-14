@@ -57,8 +57,14 @@
         }
     }
     dispatch_semaphore_signal(_semaphore);
+    if (result) {
+        return result;
+    }
     
-    return result? : [super methodSignatureForSelector:selector];
+#if DEBUG
+    NSLog(@"no delegate can respond to the selector : %@", NSStringFromSelector(selector));
+#endif
+    return [NSMethodSignature signatureWithObjCTypes:"v@"];
 }
 
 - (void)forwardInvocation:(NSInvocation *)invocation {
@@ -85,74 +91,11 @@
     
     NSUInteger count = methodSignature.numberOfArguments;
     for (NSUInteger i = 2; i < count; i++) {
-        const char *type = [methodSignature getArgumentTypeAtIndex:i];
-        if (*type == *@encode(BOOL)) {
-            BOOL value;
-            [invocation getArgument:&value atIndex:i];
-            [dupInvocation setArgument:&value atIndex:i];
-        }
-        else if (*type == *@encode(char) || *type == *@encode(unsigned char)) {
-            char value;
-            [invocation getArgument:&value atIndex:i];
-            [dupInvocation setArgument:&value atIndex:i];
-        }
-        else if (*type == *@encode(short) || *type == *@encode(unsigned short)) {
-            short value;
-            [invocation getArgument:&value atIndex:i];
-            [dupInvocation setArgument:&value atIndex:i];
-        }
-        else if (*type == *@encode(int) || *type == *@encode(unsigned int)) {
-            int value;
-            [invocation getArgument:&value atIndex:i];
-            [dupInvocation setArgument:&value atIndex:i];
-        }
-        else if (*type == *@encode(long) || *type == *@encode(unsigned long)) {
-            long value;
-            [invocation getArgument:&value atIndex:i];
-            [dupInvocation setArgument:&value atIndex:i];
-        }
-        else if (*type == *@encode(long long) || *type == *@encode(unsigned long long)) {
-            long long value;
-            [invocation getArgument:&value atIndex:i];
-            [dupInvocation setArgument:&value atIndex:i];
-        }
-        else if (*type == *@encode(double)) {
-            double value;
-            [invocation getArgument:&value atIndex:i];
-            [dupInvocation setArgument:&value atIndex:i];
-        }
-        else if (*type == *@encode(float)) {
-            float value;
-            [invocation getArgument:&value atIndex:i];
-            [dupInvocation setArgument:&value atIndex:i];
-        }
-        else if (*type == '@') {
-            // type of [object / block], such as 'NSString *' 'void(^)(NSInteger)'
-            void *value;
-            [invocation getArgument:&value atIndex:i];
-            [dupInvocation setArgument:&value atIndex:i];
-        }
-        else if (*type == '^') {
-            // type of [pointer] , when user '&' to get the address, such as '&intValue' '&(NSString *)'
-            void *pointer;
-            [invocation getArgument:&pointer atIndex:i];
-            [dupInvocation setArgument:&pointer atIndex:i];
-        }
-        else if (*type == ':') {
-            // type of [SEL] , such as '@selector(setValue:forKey:)'
-            void *value;
-            [invocation getArgument:&value atIndex:i];
-            [dupInvocation setArgument:&value atIndex:i];
-        }
-        else {
-            NSString *selectorStr = NSStringFromSelector(selector);
-            NSString *format = @"Argument %lu to method %@ - Type(%c) not supported";
-            NSString *reason = [NSString stringWithFormat:format, (unsigned long)(i - 2), selectorStr, *type];
-            [[NSException exceptionWithName:NSInvalidArgumentException reason:reason userInfo:nil] raise];
-        }
+        void *value;
+        [invocation getArgument:&value atIndex:i];
+        [dupInvocation setArgument:&value atIndex:i];
     }
     [dupInvocation retainArguments];
-    
     return dupInvocation;
 }
 
