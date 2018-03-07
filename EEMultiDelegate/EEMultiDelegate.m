@@ -64,7 +64,7 @@
 #if DEBUG
     NSLog(@"no delegate can respond to the selector : %@", NSStringFromSelector(selector));
 #endif
-    return [NSMethodSignature signatureWithObjCTypes:"v@"];
+    return [NSMethodSignature signatureWithObjCTypes:"v@:"];
 }
 
 - (void)forwardInvocation:(NSInvocation *)invocation {
