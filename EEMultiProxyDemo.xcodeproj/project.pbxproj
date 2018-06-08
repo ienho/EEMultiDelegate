@@ -53,18 +53,18 @@
 			isa = PBXGroup;
 			children = (
 				1808097620CA32CB008455D8 /* AppDelegate.h */,
-				1808097720CA32CB008455D8 /* MyService.h */,
-				1808097820CA32CB008455D8 /* MessagePanel.m */,
-				1808097920CA32CB008455D8 /* Assets.xcassets */,
+				1808098020CA32CB008455D8 /* AppDelegate.m */,
+				1808098420CA32CB008455D8 /* ViewController.h */,
 				1808097A20CA32CB008455D8 /* ViewController.m */,
+				1808098120CA32CB008455D8 /* MessagePanel.h */,
+				1808097820CA32CB008455D8 /* MessagePanel.m */,
+				1808097720CA32CB008455D8 /* MyService.h */,
+				1808098220CA32CB008455D8 /* MyService.m */,
+				1808097920CA32CB008455D8 /* Assets.xcassets */,
 				1808097B20CA32CB008455D8 /* LaunchScreen.storyboard */,
 				1808097D20CA32CB008455D8 /* Main.storyboard */,
 				1808097F20CA32CB008455D8 /* main.m */,
-				1808098020CA32CB008455D8 /* AppDelegate.m */,
-				1808098120CA32CB008455D8 /* MessagePanel.h */,
-				1808098220CA32CB008455D8 /* MyService.m */,
 				1808098320CA32CB008455D8 /* Info.plist */,
-				1808098420CA32CB008455D8 /* ViewController.h */,
 			);
 			path = EEMultiProxyDemo;
 			sourceTree = SOURCE_ROOT;

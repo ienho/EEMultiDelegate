@@ -17,10 +17,12 @@
 #pragma mark - Public Methods
 
 + (id)alloc {
-    id s = [super alloc];
-    ((EEMultiProxy *)s)->_semaphore = dispatch_semaphore_create(1);
-    ((EEMultiProxy *)s)->_delegates = [NSHashTable weakObjectsHashTable];
-    return s;
+    EEMultiProxy *instance = [super alloc];
+    if (instance) {
+        instance->_semaphore = dispatch_semaphore_create(1);
+        instance->_delegates = [NSHashTable weakObjectsHashTable];
+    }
+    return instance;
 }
 
 + (EEMultiProxy *)proxy {
