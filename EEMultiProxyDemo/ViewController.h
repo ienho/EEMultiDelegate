@@ -1,6 +1,6 @@
 //
 //  ViewController.h
-//  EEMultiDelegateDemo
+//  EEMultiProxyDemo
 //
 //  Created by ian  on 2017/9/9.
 //  Copyright © 2017年 ian. All rights reserved.

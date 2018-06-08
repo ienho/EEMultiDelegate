@@ -1,5 +1,5 @@
 //
-//  EEMultiDelegate.h
+//  EEMultiProxy.h
 //
 //  a multicast delegate class with thread-safe
 //
@@ -9,14 +9,14 @@
 
 #import <Foundation/Foundation.h>
 
-@interface EEMultiDelegate : NSObject
+@interface EEMultiProxy : NSProxy
 
 /**
- create a EEMultiDelegate instance when you add the multicast delegate funciton to your class
+ create a EEMultiProxy instance when you add the multicast delegate funciton to your class
 
  @return new instance
  */
-+ (EEMultiDelegate *)multiDelegate;
++ (EEMultiProxy *)proxy;
 
 /**
  add a delegate to the list

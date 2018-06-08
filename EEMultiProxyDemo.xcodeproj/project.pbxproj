@@ -7,34 +7,35 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		182AD2C31F66250000414E6E /* EEMultiDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 182AD2C21F66250000414E6E /* EEMultiDelegate.m */; };
-		3CB7B7151F63911C000DBF9C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CB7B7141F63911C000DBF9C /* main.m */; };
-		3CB7B7181F63911C000DBF9C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CB7B7171F63911C000DBF9C /* AppDelegate.m */; };
-		3CB7B71B1F63911C000DBF9C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CB7B71A1F63911C000DBF9C /* ViewController.m */; };
-		3CB7B71E1F63911C000DBF9C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3CB7B71C1F63911C000DBF9C /* Main.storyboard */; };
-		3CB7B7201F63911C000DBF9C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3CB7B71F1F63911C000DBF9C /* Assets.xcassets */; };
-		3CB7B7231F63911C000DBF9C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3CB7B7211F63911C000DBF9C /* LaunchScreen.storyboard */; };
-		3CB7B7301F639257000DBF9C /* MyService.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CB7B72F1F639257000DBF9C /* MyService.m */; };
-		3CB7B7331F63995B000DBF9C /* MessagePanel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CB7B7321F63995B000DBF9C /* MessagePanel.m */; };
+		1808098520CA32CC008455D8 /* MessagePanel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1808097820CA32CB008455D8 /* MessagePanel.m */; };
+		1808098620CA32CC008455D8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1808097920CA32CB008455D8 /* Assets.xcassets */; };
+		1808098720CA32CC008455D8 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1808097A20CA32CB008455D8 /* ViewController.m */; };
+		1808098820CA32CC008455D8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1808097B20CA32CB008455D8 /* LaunchScreen.storyboard */; };
+		1808098920CA32CC008455D8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1808097D20CA32CB008455D8 /* Main.storyboard */; };
+		1808098A20CA32CC008455D8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1808097F20CA32CB008455D8 /* main.m */; };
+		1808098B20CA32CC008455D8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1808098020CA32CB008455D8 /* AppDelegate.m */; };
+		1808098C20CA32CC008455D8 /* MyService.m in Sources */ = {isa = PBXBuildFile; fileRef = 1808098220CA32CB008455D8 /* MyService.m */; };
+		1808098D20CA32CC008455D8 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1808098320CA32CB008455D8 /* Info.plist */; };
+		182AD2C31F66250000414E6E /* EEMultiProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 182AD2C21F66250000414E6E /* EEMultiProxy.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		182AD2C11F66250000414E6E /* EEMultiDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EEMultiDelegate.h; sourceTree = "<group>"; };
-		182AD2C21F66250000414E6E /* EEMultiDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EEMultiDelegate.m; sourceTree = "<group>"; };
-		3CB7B7101F63911C000DBF9C /* EEMultiDelegateDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EEMultiDelegateDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		3CB7B7141F63911C000DBF9C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		3CB7B7161F63911C000DBF9C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		3CB7B7171F63911C000DBF9C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		3CB7B7191F63911C000DBF9C /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		3CB7B71A1F63911C000DBF9C /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		3CB7B71D1F63911C000DBF9C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		3CB7B71F1F63911C000DBF9C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		3CB7B7221F63911C000DBF9C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		3CB7B7241F63911C000DBF9C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3CB7B72E1F639257000DBF9C /* MyService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyService.h; sourceTree = "<group>"; };
-		3CB7B72F1F639257000DBF9C /* MyService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyService.m; sourceTree = "<group>"; };
-		3CB7B7311F63995B000DBF9C /* MessagePanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessagePanel.h; sourceTree = "<group>"; };
-		3CB7B7321F63995B000DBF9C /* MessagePanel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessagePanel.m; sourceTree = "<group>"; };
+		1808097620CA32CB008455D8 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		1808097720CA32CB008455D8 /* MyService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyService.h; sourceTree = "<group>"; };
+		1808097820CA32CB008455D8 /* MessagePanel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessagePanel.m; sourceTree = "<group>"; };
+		1808097920CA32CB008455D8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1808097A20CA32CB008455D8 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		1808097C20CA32CB008455D8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		1808097E20CA32CB008455D8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		1808097F20CA32CB008455D8 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		1808098020CA32CB008455D8 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		1808098120CA32CB008455D8 /* MessagePanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessagePanel.h; sourceTree = "<group>"; };
+		1808098220CA32CB008455D8 /* MyService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyService.m; sourceTree = "<group>"; };
+		1808098320CA32CB008455D8 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1808098420CA32CB008455D8 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		182AD2C11F66250000414E6E /* EEMultiProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EEMultiProxy.h; sourceTree = "<group>"; };
+		182AD2C21F66250000414E6E /* EEMultiProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EEMultiProxy.m; sourceTree = "<group>"; };
+		3CB7B7101F63911C000DBF9C /* EEMultiProxyDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EEMultiProxyDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,20 +49,40 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		182AD2C01F66250000414E6E /* EEMultiDelegate */ = {
+		1808097520CA32CB008455D8 /* EEMultiProxyDemo */ = {
 			isa = PBXGroup;
 			children = (
-				182AD2C11F66250000414E6E /* EEMultiDelegate.h */,
-				182AD2C21F66250000414E6E /* EEMultiDelegate.m */,
+				1808097620CA32CB008455D8 /* AppDelegate.h */,
+				1808097720CA32CB008455D8 /* MyService.h */,
+				1808097820CA32CB008455D8 /* MessagePanel.m */,
+				1808097920CA32CB008455D8 /* Assets.xcassets */,
+				1808097A20CA32CB008455D8 /* ViewController.m */,
+				1808097B20CA32CB008455D8 /* LaunchScreen.storyboard */,
+				1808097D20CA32CB008455D8 /* Main.storyboard */,
+				1808097F20CA32CB008455D8 /* main.m */,
+				1808098020CA32CB008455D8 /* AppDelegate.m */,
+				1808098120CA32CB008455D8 /* MessagePanel.h */,
+				1808098220CA32CB008455D8 /* MyService.m */,
+				1808098320CA32CB008455D8 /* Info.plist */,
+				1808098420CA32CB008455D8 /* ViewController.h */,
 			);
-			path = EEMultiDelegate;
+			path = EEMultiProxyDemo;
+			sourceTree = SOURCE_ROOT;
+		};
+		182AD2C01F66250000414E6E /* EEMultiProxy */ = {
+			isa = PBXGroup;
+			children = (
+				182AD2C11F66250000414E6E /* EEMultiProxy.h */,
+				182AD2C21F66250000414E6E /* EEMultiProxy.m */,
+			);
+			path = EEMultiProxy;
 			sourceTree = "<group>";
 		};
 		3CB7B7071F63911C000DBF9C = {
 			isa = PBXGroup;
 			children = (
-				182AD2C01F66250000414E6E /* EEMultiDelegate */,
-				3CB7B7121F63911C000DBF9C /* EEMultiDelegateDemo */,
+				182AD2C01F66250000414E6E /* EEMultiProxy */,
+				1808097520CA32CB008455D8 /* EEMultiProxyDemo */,
 				3CB7B7111F63911C000DBF9C /* Products */,
 			);
 			sourceTree = "<group>";
@@ -69,45 +90,17 @@
 		3CB7B7111F63911C000DBF9C /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				3CB7B7101F63911C000DBF9C /* EEMultiDelegateDemo.app */,
+				3CB7B7101F63911C000DBF9C /* EEMultiProxyDemo.app */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		3CB7B7121F63911C000DBF9C /* EEMultiDelegateDemo */ = {
-			isa = PBXGroup;
-			children = (
-				3CB7B7161F63911C000DBF9C /* AppDelegate.h */,
-				3CB7B7171F63911C000DBF9C /* AppDelegate.m */,
-				3CB7B72E1F639257000DBF9C /* MyService.h */,
-				3CB7B72F1F639257000DBF9C /* MyService.m */,
-				3CB7B7311F63995B000DBF9C /* MessagePanel.h */,
-				3CB7B7321F63995B000DBF9C /* MessagePanel.m */,
-				3CB7B7191F63911C000DBF9C /* ViewController.h */,
-				3CB7B71A1F63911C000DBF9C /* ViewController.m */,
-				3CB7B71C1F63911C000DBF9C /* Main.storyboard */,
-				3CB7B71F1F63911C000DBF9C /* Assets.xcassets */,
-				3CB7B7211F63911C000DBF9C /* LaunchScreen.storyboard */,
-				3CB7B7241F63911C000DBF9C /* Info.plist */,
-				3CB7B7131F63911C000DBF9C /* Supporting Files */,
-			);
-			path = EEMultiDelegateDemo;
-			sourceTree = "<group>";
-		};
-		3CB7B7131F63911C000DBF9C /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				3CB7B7141F63911C000DBF9C /* main.m */,
-			);
-			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		3CB7B70F1F63911C000DBF9C /* EEMultiDelegateDemo */ = {
+		3CB7B70F1F63911C000DBF9C /* EEMultiProxyDemo */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3CB7B7271F63911C000DBF9C /* Build configuration list for PBXNativeTarget "EEMultiDelegateDemo" */;
+			buildConfigurationList = 3CB7B7271F63911C000DBF9C /* Build configuration list for PBXNativeTarget "EEMultiProxyDemo" */;
 			buildPhases = (
 				3CB7B70C1F63911C000DBF9C /* Sources */,
 				3CB7B70D1F63911C000DBF9C /* Frameworks */,
@@ -117,9 +110,9 @@
 			);
 			dependencies = (
 			);
-			name = EEMultiDelegateDemo;
+			name = EEMultiProxyDemo;
 			productName = EEMultiDelegateDemo;
-			productReference = 3CB7B7101F63911C000DBF9C /* EEMultiDelegateDemo.app */;
+			productReference = 3CB7B7101F63911C000DBF9C /* EEMultiProxyDemo.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -138,7 +131,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 3CB7B70B1F63911C000DBF9C /* Build configuration list for PBXProject "EEMultiDelegateDemo" */;
+			buildConfigurationList = 3CB7B70B1F63911C000DBF9C /* Build configuration list for PBXProject "EEMultiProxyDemo" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -151,7 +144,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				3CB7B70F1F63911C000DBF9C /* EEMultiDelegateDemo */,
+				3CB7B70F1F63911C000DBF9C /* EEMultiProxyDemo */,
 			);
 		};
 /* End PBXProject section */
@@ -161,9 +154,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3CB7B7231F63911C000DBF9C /* LaunchScreen.storyboard in Resources */,
-				3CB7B7201F63911C000DBF9C /* Assets.xcassets in Resources */,
-				3CB7B71E1F63911C000DBF9C /* Main.storyboard in Resources */,
+				1808098620CA32CC008455D8 /* Assets.xcassets in Resources */,
+				1808098920CA32CC008455D8 /* Main.storyboard in Resources */,
+				1808098820CA32CC008455D8 /* LaunchScreen.storyboard in Resources */,
+				1808098D20CA32CC008455D8 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -174,32 +168,32 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3CB7B71B1F63911C000DBF9C /* ViewController.m in Sources */,
-				3CB7B7331F63995B000DBF9C /* MessagePanel.m in Sources */,
-				3CB7B7181F63911C000DBF9C /* AppDelegate.m in Sources */,
-				182AD2C31F66250000414E6E /* EEMultiDelegate.m in Sources */,
-				3CB7B7151F63911C000DBF9C /* main.m in Sources */,
-				3CB7B7301F639257000DBF9C /* MyService.m in Sources */,
+				1808098520CA32CC008455D8 /* MessagePanel.m in Sources */,
+				1808098C20CA32CC008455D8 /* MyService.m in Sources */,
+				1808098720CA32CC008455D8 /* ViewController.m in Sources */,
+				1808098B20CA32CC008455D8 /* AppDelegate.m in Sources */,
+				182AD2C31F66250000414E6E /* EEMultiProxy.m in Sources */,
+				1808098A20CA32CC008455D8 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		3CB7B71C1F63911C000DBF9C /* Main.storyboard */ = {
+		1808097B20CA32CB008455D8 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				3CB7B71D1F63911C000DBF9C /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		3CB7B7211F63911C000DBF9C /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				3CB7B7221F63911C000DBF9C /* Base */,
+				1808097C20CA32CB008455D8 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		1808097D20CA32CB008455D8 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1808097E20CA32CB008455D8 /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -300,9 +294,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = HM2V979V4E;
-				INFOPLIST_FILE = EEMultiDelegateDemo/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/EEMultiProxyDemo/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "IAN-APPS.EEMultiDelegateDemo";
+				PRODUCT_BUNDLE_IDENTIFIER = "IAN-APPS.EEMultiProxyDemo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -312,9 +306,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = HM2V979V4E;
-				INFOPLIST_FILE = EEMultiDelegateDemo/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/EEMultiProxyDemo/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "IAN-APPS.EEMultiDelegateDemo";
+				PRODUCT_BUNDLE_IDENTIFIER = "IAN-APPS.EEMultiProxyDemo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -322,7 +316,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		3CB7B70B1F63911C000DBF9C /* Build configuration list for PBXProject "EEMultiDelegateDemo" */ = {
+		3CB7B70B1F63911C000DBF9C /* Build configuration list for PBXProject "EEMultiProxyDemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3CB7B7251F63911C000DBF9C /* Debug */,
@@ -331,7 +325,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3CB7B7271F63911C000DBF9C /* Build configuration list for PBXNativeTarget "EEMultiDelegateDemo" */ = {
+		3CB7B7271F63911C000DBF9C /* Build configuration list for PBXNativeTarget "EEMultiProxyDemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3CB7B7281F63911C000DBF9C /* Debug */,

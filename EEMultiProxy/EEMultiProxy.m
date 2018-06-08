@@ -1,5 +1,5 @@
 //
-//  EEMultiDelegate.m
+//  EEMultiProxy.m
 //
 //  a multicast delegate class with thread-safe
 //
@@ -7,28 +7,24 @@
 //  Copyright © 2017 ian<https://github.com/ienho>. All rights reserved.
 //
 
-#import "EEMultiDelegate.h"
+#import "EEMultiProxy.h"
 
-@implementation EEMultiDelegate {
+@implementation EEMultiProxy {
     NSHashTable *_delegates;
     dispatch_semaphore_t _semaphore;
 }
 
-#pragma mark - Lifecycle
-
-- (instancetype)init {
-    if (self = [super init]) {
-        _delegates = [NSHashTable hashTableWithOptions:NSPointerFunctionsWeakMemory];
-        _semaphore = dispatch_semaphore_create(1);
-    }
-    return self;
-}
-
 #pragma mark - Public Methods
 
-+ (EEMultiDelegate *)multiDelegate {
-    EEMultiDelegate *multiDelegate = [[EEMultiDelegate alloc] init];
-    return multiDelegate;
++ (id)alloc {
+    id s = [super alloc];
+    ((EEMultiProxy *)s)->_semaphore = dispatch_semaphore_create(1);
+    ((EEMultiProxy *)s)->_delegates = [NSHashTable weakObjectsHashTable];
+    return s;
+}
+
++ (EEMultiProxy *)proxy {
+    return [EEMultiProxy alloc];
 }
 
 - (void)addDelegate:(id)delegate {
@@ -47,30 +43,27 @@
 
 - (NSMethodSignature *)methodSignatureForSelector:(SEL)selector {
     dispatch_semaphore_wait(_semaphore, DISPATCH_TIME_FOREVER);
-    NSMethodSignature *result = nil;
+    NSMethodSignature *methodSignature;
     for (id delegate in _delegates) {
         if ([delegate respondsToSelector:selector]) {
-            result = [delegate methodSignatureForSelector:selector];
-            if (result) {
-                break;
-            }
+            methodSignature = [delegate methodSignatureForSelector:selector];
+            break;
         }
     }
     dispatch_semaphore_signal(_semaphore);
-    if (result) {
-        return result;
-    }
+    if (methodSignature) return methodSignature;
     
-#if DEBUG
-    NSLog(@"no delegate can respond to the selector : %@", NSStringFromSelector(selector));
-#endif
+    // Avoid crash, must return a methodSignature "- (void)method"
     return [NSMethodSignature signatureWithObjCTypes:"v@:"];
 }
 
 - (void)forwardInvocation:(NSInvocation *)invocation {
-    SEL selector = invocation.selector;
     dispatch_semaphore_wait(_semaphore, DISPATCH_TIME_FOREVER);
-    for (id delegate in _delegates) {
+    NSHashTable *copyDelegates = [_delegates copy];
+    dispatch_semaphore_signal(_semaphore);
+    
+    SEL selector = invocation.selector;
+    for (id delegate in copyDelegates) {
         if ([delegate respondsToSelector:selector]) {
             // must use duplicated invocation when you invoke with async
             NSInvocation *dupInvocation = [self duplicateInvocation:invocation];
@@ -80,12 +73,11 @@
             });
         }
     }
-    dispatch_semaphore_signal(_semaphore);
 }
 
 - (NSInvocation *)duplicateInvocation:(NSInvocation *)invocation {
-    NSMethodSignature *methodSignature = invocation.methodSignature;
     SEL selector = invocation.selector;
+    NSMethodSignature *methodSignature = invocation.methodSignature;
     NSInvocation *dupInvocation = [NSInvocation invocationWithMethodSignature:methodSignature];
     dupInvocation.selector = selector;
     
