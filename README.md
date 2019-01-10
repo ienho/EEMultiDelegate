@@ -1,8 +1,13 @@
 # EEMultiProxy
 
+![support](https://img.shields.io/badge/cocoaPod-0.0.1-green.svg)
+![platform](https://img.shields.io/badge/platform-iOS-blue.svg)
+
 A `multicast`/`multidelegate` class with thread-safe
 
-# Install
+# Cocoa Pods
+
+> pod 'EEMultiDelegate', :git => "https://github.com/GrayLand119/EEMultiDelegate.git"
 
 # Example
 
