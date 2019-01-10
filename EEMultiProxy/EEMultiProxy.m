@@ -41,6 +41,12 @@
     dispatch_semaphore_signal(_semaphore);
 }
 
+- (void)removeAllDelegates {
+    dispatch_semaphore_wait(_semaphore, DISPATCH_TIME_FOREVER);
+    [_delegates removeAllObjects];
+    dispatch_semaphore_signal(_semaphore);
+}
+
 #pragma mark - Forward Methods
 
 - (NSMethodSignature *)methodSignatureForSelector:(SEL)selector {
@@ -70,9 +76,15 @@
             // must use duplicated invocation when you invoke with async
             NSInvocation *dupInvocation = [self duplicateInvocation:invocation];
             dupInvocation.target = delegate;
-            dispatch_async(dispatch_get_global_queue(0, 0), ^{
-                [dupInvocation invoke];
-            });
+            if (_runInMainThread) {
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [dupInvocation invoke];
+                });
+            }else {
+                dispatch_async(dispatch_get_global_queue(0, 0), ^{
+                    [dupInvocation invoke];
+                });
+            }
         }
     }
 }
@@ -91,6 +103,10 @@
     }
     [dupInvocation retainArguments];
     return dupInvocation;
+}
+
+- (BOOL)respondsToSelector:(SEL)aSelector {
+    return YES;
 }
 
 @end

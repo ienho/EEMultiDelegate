@@ -11,6 +11,8 @@
 
 @interface EEMultiProxy : NSProxy
 
+@property (nonatomic, assign) BOOL runInMainThread;///< Default is YES
+
 /**
  create a EEMultiProxy instance when you add the multicast delegate funciton to your class
 
@@ -27,5 +29,11 @@
  remove a delegate from the list
  */
 - (void)removeDelete:(id)delegate;
+
+
+/**
+ Remove all delegates from the list
+ */
+- (void)removeAllDelegates;
 
 @end
