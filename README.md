@@ -9,6 +9,10 @@ A `multicast`/`multidelegate` class with thread-safe
 
 > pod 'EEMultiDelegate', :git => "https://github.com/GrayLand119/EEMultiDelegate.git"
 
+or 
+
+> pod 'EEMultiDelegate'
+
 # Example
 
 ```objc
