@@ -40,7 +40,7 @@
 
 /* Begin PBXFileReference section */
 		17299DB7CCA25BA607E589D5 /* Pods_EEMultiDelegate_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EEMultiDelegate_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		301EF0DCFDB7B48C6359AB85 /* EEMultiDelegate.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = EEMultiDelegate.podspec; path = ../EEMultiDelegate.podspec; sourceTree = "<group>"; };
+		301EF0DCFDB7B48C6359AB85 /* EEMultiDelegate.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = EEMultiDelegate.podspec; path = ../EEMultiDelegate.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		3977D49A826549A9FB981AAE /* Pods-EEMultiDelegate_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EEMultiDelegate_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EEMultiDelegate_Tests/Pods-EEMultiDelegate_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		49E5D7E722D31003001DA3B8 /* MessagePanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessagePanel.h; sourceTree = "<group>"; };
 		49E5D7E822D31003001DA3B8 /* MyService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyService.m; sourceTree = "<group>"; };
