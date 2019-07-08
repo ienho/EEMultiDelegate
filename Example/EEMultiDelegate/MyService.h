@@ -18,7 +18,6 @@
 @interface MyService : NSObject
 
 - (void)addDelegate:(id<MessageReceiveDelegate>)delegate;
-- (void)removeDelegate:(id<MessageReceiveDelegate>)delegate;
 - (void)receiveNewMessage;
 
 @end

@@ -12,6 +12,10 @@
     EEMultiProxy *_proxy;
 }
 
+- (void)dealloc {
+    [_proxy removeAllDelegates];
+}
+
 - (instancetype)init {
     if (self = [super init]) {
         _proxy = [EEMultiProxy proxy];
@@ -21,10 +25,6 @@
 
 - (void)addDelegate:(id<MessageReceiveDelegate>)delegate {
     [_proxy addDelegate:delegate];
-}
-
-- (void)removeDelegate:(id<MessageReceiveDelegate>)delegate {
-    [_proxy removeDelete:delegate];
 }
 
 - (void)receiveNewMessage {

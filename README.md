@@ -3,11 +3,11 @@
 ![support](https://img.shields.io/badge/cocoaPod-0.0.1-green.svg)
 ![platform](https://img.shields.io/badge/platform-iOS-blue.svg)
 
-A `multicast`/`multidelegate` class with thread-safe
+A `multicast-delegate` class with thread-safe
 
 # Cocoa Pods
 
-> pod 'EEMultiDelegate', :git => "https://github.com/GrayLand119/EEMultiDelegate.git"
+> pod 'EEMultiDelegate', :git => "https://github.com/ienho/EEMultiDelegate.git"
 
 or 
 
@@ -19,21 +19,21 @@ or
 
 @protocol MyDelegate <NSObject>
 - (void)delegateMethodA:(NSString *)message;
-- (void)delegateMethodB:(NSString *)message;
 @end
 
 @interface MyService : NSObject
 
 - (void)addDelegate:(id<MyDelegate>)delegate;
-- (void)removeDelegate:(id<MyDelegate>)delegate;
-- (void)removeAllDelegates;
-
 - (void)doSomethingWillCallDelegate;
 
 @end
 
 @implementation MyService {
     EEMultiProxy *_proxy;
+}
+
+- (void)dealloc {
+    [_proxy removeAllDelegates];
 }
 
 - (instancetype)init {
@@ -45,14 +45,6 @@ or
 
 - (void)addDelegate:(id<MyDelegate>)delegate {
     [_proxy addDelegate:delegate];
-}
-
-- (void)removeDelegate:(id<MyDelegate>)delegate {
-    [_proxy removeDelete:delegate];
-}
-
-- (void)removeAllDelegates {
-	[_proxy removeAllDelegates];
 }
 
 - (void)doSomethingWillCallDelegate {
@@ -76,6 +68,5 @@ UIViewController *controllerC;
 // Then controllerA, controllerB, controllerC
 // will be invoke with the delegate's method if they had implement.
 ...
-
 
 ```
