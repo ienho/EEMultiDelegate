@@ -1,0 +1,13 @@
+use_frameworks!
+
+platform :ios, '8.0'
+
+target 'EEMultiDelegate_Example' do
+  pod 'EEMultiDelegate', :path => '../'
+
+  target 'EEMultiDelegate_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
