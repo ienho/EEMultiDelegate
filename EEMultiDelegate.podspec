@@ -26,7 +26,8 @@ Pod::Spec.new do |s|
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'ienho' => 'hyhshiwool@163.com' }
   s.source           = { :git => 'https://github.com/ienho/EEMultiDelegate.git', :tag => s.version.to_s }
-
+  s.platform         = :ios, "8.0"
+  
   s.ios.deployment_target = '8.0'
   s.requires_arc = true
 
