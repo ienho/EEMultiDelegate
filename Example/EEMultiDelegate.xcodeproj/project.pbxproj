@@ -8,8 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		3576B2EA5E7A101A59567D5D /* Pods_EEMultiDelegate_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F9552792C48CD0484AE724C /* Pods_EEMultiDelegate_Tests.framework */; };
-		49E5D7EB22D31004001DA3B8 /* MyService.m in Sources */ = {isa = PBXBuildFile; fileRef = 49E5D7E822D31003001DA3B8 /* MyService.m */; };
+		49E5D7EB22D31004001DA3B8 /* MessageService.m in Sources */ = {isa = PBXBuildFile; fileRef = 49E5D7E822D31003001DA3B8 /* MessageService.m */; };
 		49E5D7EC22D31004001DA3B8 /* MessagePanel.m in Sources */ = {isa = PBXBuildFile; fileRef = 49E5D7E922D31003001DA3B8 /* MessagePanel.m */; };
+		49E5D7FB22D430AA001DA3B8 /* EESecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49E5D7FA22D430AA001DA3B8 /* EESecondViewController.m */; };
 		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58F195388D20070C39A /* CoreGraphics.framework */; };
 		6003F592195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
@@ -43,9 +44,11 @@
 		301EF0DCFDB7B48C6359AB85 /* EEMultiDelegate.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = EEMultiDelegate.podspec; path = ../EEMultiDelegate.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		3977D49A826549A9FB981AAE /* Pods-EEMultiDelegate_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EEMultiDelegate_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EEMultiDelegate_Tests/Pods-EEMultiDelegate_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		49E5D7E722D31003001DA3B8 /* MessagePanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessagePanel.h; sourceTree = "<group>"; };
-		49E5D7E822D31003001DA3B8 /* MyService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyService.m; sourceTree = "<group>"; };
+		49E5D7E822D31003001DA3B8 /* MessageService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageService.m; sourceTree = "<group>"; };
 		49E5D7E922D31003001DA3B8 /* MessagePanel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessagePanel.m; sourceTree = "<group>"; };
-		49E5D7EA22D31003001DA3B8 /* MyService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyService.h; sourceTree = "<group>"; };
+		49E5D7EA22D31003001DA3B8 /* MessageService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageService.h; sourceTree = "<group>"; };
+		49E5D7F922D430AA001DA3B8 /* EESecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EESecondViewController.h; sourceTree = "<group>"; };
+		49E5D7FA22D430AA001DA3B8 /* EESecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EESecondViewController.m; sourceTree = "<group>"; };
 		519E2D7C30E3EACB3F03736D /* Pods-EEMultiDelegate_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EEMultiDelegate_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-EEMultiDelegate_Example/Pods-EEMultiDelegate_Example.release.xcconfig"; sourceTree = "<group>"; };
 		56E51E08C997F32710557098 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		6003F58A195388D20070C39A /* EEMultiDelegate_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EEMultiDelegate_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -140,13 +143,15 @@
 			children = (
 				6003F59C195388D20070C39A /* EEAppDelegate.h */,
 				6003F59D195388D20070C39A /* EEAppDelegate.m */,
-				49E5D7E722D31003001DA3B8 /* MessagePanel.h */,
-				49E5D7E922D31003001DA3B8 /* MessagePanel.m */,
-				49E5D7EA22D31003001DA3B8 /* MyService.h */,
-				49E5D7E822D31003001DA3B8 /* MyService.m */,
-				873B8AEA1B1F5CCA007FD442 /* Main.storyboard */,
 				6003F5A5195388D20070C39A /* EEViewController.h */,
 				6003F5A6195388D20070C39A /* EEViewController.m */,
+				49E5D7F922D430AA001DA3B8 /* EESecondViewController.h */,
+				49E5D7FA22D430AA001DA3B8 /* EESecondViewController.m */,
+				49E5D7E722D31003001DA3B8 /* MessagePanel.h */,
+				49E5D7E922D31003001DA3B8 /* MessagePanel.m */,
+				49E5D7EA22D31003001DA3B8 /* MessageService.h */,
+				49E5D7E822D31003001DA3B8 /* MessageService.m */,
+				873B8AEA1B1F5CCA007FD442 /* Main.storyboard */,
 				71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */,
 				6003F5A8195388D20070C39A /* Images.xcassets */,
 				6003F594195388D20070C39A /* Supporting Files */,
@@ -311,7 +316,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-EEMultiDelegate_Example/Pods-EEMultiDelegate_Example-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-EEMultiDelegate_Example/Pods-EEMultiDelegate_Example-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/EEMultiDelegate/EEMultiDelegate.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -320,7 +325,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-EEMultiDelegate_Example/Pods-EEMultiDelegate_Example-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-EEMultiDelegate_Example/Pods-EEMultiDelegate_Example-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		98F9BE9DD625A044829EEDB1 /* [CP] Check Pods Manifest.lock */ = {
@@ -366,8 +371,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49E5D7FB22D430AA001DA3B8 /* EESecondViewController.m in Sources */,
 				6003F59E195388D20070C39A /* EEAppDelegate.m in Sources */,
-				49E5D7EB22D31004001DA3B8 /* MyService.m in Sources */,
+				49E5D7EB22D31004001DA3B8 /* MessageService.m in Sources */,
 				49E5D7EC22D31004001DA3B8 /* MessagePanel.m in Sources */,
 				6003F5A7195388D20070C39A /* EEViewController.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,

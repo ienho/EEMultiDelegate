@@ -2,12 +2,13 @@
 //  MessagePanel.m
 //  EEMultiProxyDemo
 //
-//  Created by ian  on 2017/9/9.
+//  Created by ian<https://github.com/ienho>. on 2017/9/9.
 //  Copyright © 2017年 ian. All rights reserved.
 //
 
 #import "MessagePanel.h"
-#import "MyService.h"
+#import "MessageService.h"
+#import <EEMultiDelegate/NSObject+EEMultiProxyAddition.h>
 
 @interface MessagePanel() <MessageReceiveDelegate>
 
@@ -15,10 +16,10 @@
 
 @implementation MessagePanel
 
-- (instancetype)initWithName:(NSString *)name service:(MyService *)service {
+- (instancetype)initWithName:(NSString *)name service:(MessageService *)service {
     if (self = [super init]) {
         _name = [name copy];
-        [service addDelegate:self];
+        [service ee_addDelegate:self];
     }
     return self;
 }

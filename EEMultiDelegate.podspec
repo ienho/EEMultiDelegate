@@ -24,7 +24,7 @@ Pod::Spec.new do |s|
 
   s.homepage         = 'https://github.com/ienho/EEMultiDelegate'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { 'ienho' => 'hyhshiwool@163.com' }
+  s.author           = { 'ian' => 'hyhshiwool@163.com' }
   s.source           = { :git => 'https://github.com/ienho/EEMultiDelegate.git', :tag => s.version.to_s }
   s.platform         = :ios, "8.0"
   

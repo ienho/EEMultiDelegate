@@ -1,6 +1,6 @@
 # EEMultiProxy
 
-![support](https://img.shields.io/badge/cocoaPod-0.0.1-green.svg)
+![support](https://img.shields.io/badge/cocoaPod-0.2.0-green.svg)
 ![platform](https://img.shields.io/badge/platform-iOS-blue.svg)
 
 A `multicast-delegate` class with thread-safe
@@ -15,58 +15,100 @@ or
 
 # Example
 
+1. Let `MessageService` support `multicast-delegate` use `EEMultiProxy`
+
 ```objc
 
-@protocol MyDelegate <NSObject>
-- (void)delegateMethodA:(NSString *)message;
-@end
+#import <Foundation/Foundation.h>
 
-@interface MyService : NSObject
+@protocol MessageReceiveDelegate <NSObject>
 
-- (void)addDelegate:(id<MyDelegate>)delegate;
-- (void)doSomethingWillCallDelegate;
+- (void)receiveMessage:(NSString *)message;
 
 @end
 
-@implementation MyService {
-    EEMultiProxy *_proxy;
-}
+@interface MessageService : NSObject
 
-- (void)dealloc {
-    [_proxy removeAllDelegates];
-}
+- (void)stopReceive;
+- (void)receiveNewMessage;
 
-- (instancetype)init {
-    if (self = [super init]) {
-        _proxy = [EEMultiProxy proxy];
-    }
-    return self;
-}
-
-- (void)addDelegate:(id<MyDelegate>)delegate {
-    [_proxy addDelegate:delegate];
-}
-
-- (void)doSomethingWillCallDelegate {
-	[(id<MyDelegate>)_proxy delegateMethodA:@"doSomethingWillCallDelegate"];
-}
+@end
 
 ```
 
 ```objc
-MyService *service;
-UIViewController *controllerA;
-UIViewController *controllerB;
-UIViewController *controllerC;
+#import "MessageService.h"
+#import <EEMultiDelegate/NSObject+EEMultiProxyAddition.h>
 
-[service addDelegate:controllerA];
-[service addDelegate:controllerB];
-[service addDelegate:controllerC];
+@implementation MessageService {
+    dispatch_source_t _timer;
+}
 
-[service doSomethingWillCallDelegate];
+- (void)stopReceive {
+    if (_timer) {
+        dispatch_cancel(_timer);
+        _timer = nil;
+    }
+}
 
-// Then controllerA, controllerB, controllerC
-// will be invoke with the delegate's method if they had implement.
-...
+- (void)receiveNewMessage {
+    static NSInteger count = 0;
+    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    _timer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0, queue);
+    dispatch_source_set_timer(_timer,dispatch_walltime(NULL, 0), 1.0 * NSEC_PER_SEC, 0);
+    dispatch_source_set_event_handler(_timer, ^{
+        NSString *newMessage = [NSString stringWithFormat:@"message %ld", (long)count];
+        NSLog(@"--- --- --- --- --- --- --- --- --- --- --- --- --- ---");
+        NSLog(@"the service receiving new message : %@", newMessage);
+        [EEProxy(MessageReceiveDelegate) receiveMessage:newMessage];
+        count++;
+    });
+    dispatch_resume(_timer);
+}
+
+@end
+
+```
+
+2. `MessagePanel` implement delegate `MessageReceiveDelegate`
+
+```objc
+
+@implementation MessagePanel
+
+- (instancetype)initWithName:(NSString *)name service:(MessageService *)service {
+    if (self = [super init]) {
+        _name = [name copy];
+        [service ee_addDelegate:self];
+    }
+    return self;
+}
+
+- (void)showMessage:(NSString *)message {
+    NSLog(@"MessagePanel-%@ show message : %@", _name, message);
+}
+
+#pragma mark - MessageReceiveDelegate
+
+- (void)receiveMessage:(NSString *)message {
+    [self showMessage:message];
+}
+
+@end
+
+```
+
+3. the _panel1, _panel2, _panel3
+will be invoke method  `receiveMessage`.
+
+```objc
+
+_service = MessageService.new;
+
+_panel1 = [[MessagePanel alloc] initWithName:@"A" service:_service];
+_panel2 = [[MessagePanel alloc] initWithName:@"B" service:_service];
+_panel3 = [[MessagePanel alloc] initWithName:@"C" service:_service];
+
+[_service receiveNewMessage];
 
 ```

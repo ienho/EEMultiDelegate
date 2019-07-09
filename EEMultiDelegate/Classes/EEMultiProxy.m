@@ -3,8 +3,8 @@
 //
 //  a multicast delegate class with thread-safe
 //
-//  Created by ian  on 2017/9/9.
-//  Copyright © 2017 ian<https://github.com/ienho>. All rights reserved.
+//  Created by ian<https://github.com/ienho> on 2017/9/9.
+//  Copyright © 2017 ian. All rights reserved.
 //
 
 #import "EEMultiProxy.h"
@@ -59,9 +59,11 @@
         }
     }
     dispatch_semaphore_signal(_semaphore);
-    if (methodSignature) return methodSignature;
+    if (methodSignature) {
+        return methodSignature;
+    }
     
-    // Avoid crash, must return a methodSignature "- (void)method"
+    // Avoid crash, must return a methodSignature ("- (void)method" -> "v@:")
     return [NSMethodSignature signatureWithObjCTypes:"v@:"];
 }
 
@@ -80,8 +82,8 @@
                 dispatch_async(dispatch_get_main_queue(), ^{
                     [dupInvocation invoke];
                 });
-            }else {
-                dispatch_async(dispatch_get_global_queue(0, 0), ^{
+            } else {
+                dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
                     [dupInvocation invoke];
                 });
             }

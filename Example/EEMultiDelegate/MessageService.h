@@ -1,13 +1,12 @@
 //
-//  MyService.h
+//  MessageService.h
 //  EEMultiProxyDemo
 //
-//  Created by ian  on 2017/9/9.
+//  Created by ian<https://github.com/ienho> on 2017/9/9.
 //  Copyright © 2017年 ian. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
-#import "EEMultiProxy.h"
 
 @protocol MessageReceiveDelegate <NSObject>
 
@@ -15,9 +14,9 @@
 
 @end
 
-@interface MyService : NSObject
+@interface MessageService : NSObject
 
-- (void)addDelegate:(id<MessageReceiveDelegate>)delegate;
+- (void)stopReceive;
 - (void)receiveNewMessage;
 
 @end

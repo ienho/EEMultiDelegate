@@ -2,8 +2,8 @@
 //  main.m
 //  EEMultiDelegate
 //
-//  Created by hyhshiwool@163.com on 07/08/2019.
-//  Copyright (c) 2019 hyhshiwool@163.com. All rights reserved.
+//  Created by ian<https://github.com/ienho> on 07/08/2019.
+//  Copyright (c) 2019 ian. All rights reserved.
 //
 
 @import UIKit;
