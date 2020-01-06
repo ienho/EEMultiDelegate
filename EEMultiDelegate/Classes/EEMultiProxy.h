@@ -9,6 +9,10 @@
 
 #import <Foundation/Foundation.h>
 
+/// ！！！
+/// not support 'union' arguments,
+/// because it will be cause a crash when call the method [NSMethodSignature signatureWithObjCTypes:]
+///
 @interface EEMultiProxy : NSProxy
 
 /**
@@ -32,7 +36,6 @@
  Remove a delegate from the list
  */
 - (void)removeDelete:(id)delegate;
-
 
 /**
  Remove all delegates from the list

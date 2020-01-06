@@ -30,6 +30,35 @@
         NSLog(@"--- --- --- --- --- --- --- --- --- --- --- --- --- ---");
         NSLog(@"the service receiving new message : %@", newMessage);
         [EEProxy(MessageReceiveDelegate) receiveMessage:newMessage];
+        
+        // type test
+        //        NSString *str = @"this is a test";
+        //        NSObject *obj = NSObject.new;
+        //        NSInteger age = 99;
+        //        CGSize size = CGSizeMake(200, 300);
+        //        CGPoint point = CGPointMake(30, 90);
+        //        NSArray *array = @[@"this", @"age"];
+        //        SEL sel = NSSelectorFromString(@"setName:");
+        //        void(^block)(void) = ^{
+        //            NSLog(@"block excuting");
+        //        };
+        //        char cChar = 'B';
+        //        int cArray[5] = {1,3,4,5};
+        //        void *cPoint = NULL;
+        //        Byte aByte = 128;
+        //        [EEProxy(MessageReceiveDelegate) receiveMessageTypeTest:str
+        //                                                            obj:obj
+        //                                                            intger:age
+        //                                                           size:size
+        //                                                          point:point
+        //                                                          array:array
+        //                                                            sel:sel
+        //                                                          block:block
+        //                                                          cChar:cChar
+        //                                                         cArray:cArray
+        //                                                         cPoint:cPoint
+        //                                                          aByte:aByte];
+        
         count++;
     });
     dispatch_resume(_timer);

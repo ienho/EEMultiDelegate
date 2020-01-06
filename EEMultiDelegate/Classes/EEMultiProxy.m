@@ -75,9 +75,8 @@
     SEL selector = invocation.selector;
     for (id delegate in copyDelegates) {
         if ([delegate respondsToSelector:selector]) {
-            // must use duplicated invocation when you invoke with async
-            NSInvocation *dupInvocation = [self duplicateInvocation:invocation];
-            dupInvocation.target = delegate;
+            // must use duplicated invocation when you invoke with async (target)
+            NSInvocation *dupInvocation = [self duplicateInvocation:invocation target:delegate];
             if (_runInMainThread) {
                 dispatch_async(dispatch_get_main_queue(), ^{
                     [dupInvocation invoke];
@@ -91,17 +90,22 @@
     }
 }
 
-- (NSInvocation *)duplicateInvocation:(NSInvocation *)invocation {
+- (NSInvocation *)duplicateInvocation:(NSInvocation *)invocation target:(id)target {
     SEL selector = invocation.selector;
     NSMethodSignature *methodSignature = invocation.methodSignature;
     NSInvocation *dupInvocation = [NSInvocation invocationWithMethodSignature:methodSignature];
     dupInvocation.selector = selector;
+    dupInvocation.target = target;
     
     NSUInteger count = methodSignature.numberOfArguments;
     for (NSUInteger i = 2; i < count; i++) {
-        void *value;
-        [invocation getArgument:&value atIndex:i];
-        [dupInvocation setArgument:&value atIndex:i];
+        // copy bytes from invocation to dupInvocation
+        const char *valueType = [methodSignature getArgumentTypeAtIndex:i];
+        NSUInteger valueSize = 0;
+        NSGetSizeAndAlignment(valueType, &valueSize, NULL);
+        unsigned char valueBytes[valueSize];
+        [invocation getArgument:valueBytes atIndex:i];
+        [dupInvocation setArgument:valueBytes atIndex:i];
     }
     [dupInvocation retainArguments];
     return dupInvocation;
