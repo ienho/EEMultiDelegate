@@ -21,6 +21,7 @@
     if (instance) {
         instance->_semaphore = dispatch_semaphore_create(1);
         instance->_delegates = [NSHashTable weakObjectsHashTable];
+        instance->_runInMainThread = YES;
     }
     return instance;
 }

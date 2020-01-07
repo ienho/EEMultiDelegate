@@ -9,8 +9,11 @@
 
 #import <Foundation/Foundation.h>
 
+///
+/// All delegate's methods will responds in async thread [default in main thread]
+///
 /// ！！！
-/// not support 'union' arguments,
+/// Not support 'union' arguments,
 /// because it will be cause a crash when call the method [NSMethodSignature signatureWithObjCTypes:]
 ///
 @interface EEMultiProxy : NSProxy
