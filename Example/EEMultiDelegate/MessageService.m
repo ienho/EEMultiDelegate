@@ -7,7 +7,7 @@
 //
 
 #import "MessageService.h"
-#import <EEMultiDelegate/NSObject+EEMultiProxyAddition.h>
+#import <EEMultiDelegate/NSObject+EEMultiProxyAdditions.h>
 
 @implementation MessageService {
     dispatch_source_t _timer;

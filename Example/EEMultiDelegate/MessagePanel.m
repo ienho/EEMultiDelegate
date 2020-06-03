@@ -8,7 +8,7 @@
 
 #import "MessagePanel.h"
 #import "MessageService.h"
-#import <EEMultiDelegate/NSObject+EEMultiProxyAddition.h>
+#import <EEMultiDelegate/NSObject+EEMultiProxyAdditions.h>
 
 @interface MessagePanel() <MessageReceiveDelegate>
 

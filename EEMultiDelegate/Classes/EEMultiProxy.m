@@ -22,6 +22,7 @@
         instance->_semaphore = dispatch_semaphore_create(1);
         instance->_delegates = [NSHashTable weakObjectsHashTable];
         instance->_runInMainThread = YES;
+        instance->_runAsynchronously = YES;
     }
     return instance;
 }
@@ -64,11 +65,18 @@
         return methodSignature;
     }
     
-    // Avoid crash, must return a methodSignature ("- (void)method" -> "v@:")
-    return [NSMethodSignature signatureWithObjCTypes:"v@:"];
+    // To avoid crash, we must return a default methodSignature
+    // because a delegate's methodSignature never equal to a block's methodSignature,
+    // so we return a block's methodSignature as default (void(^)(void) -> "v@")
+    return [NSMethodSignature signatureWithObjCTypes:"v@"];
 }
 
 - (void)forwardInvocation:(NSInvocation *)invocation {
+    // do nothing if the methodSignature is default
+    if (invocation.methodSignature == [NSMethodSignature signatureWithObjCTypes:"v@"]) {
+        return;
+    }
+    
     dispatch_semaphore_wait(_semaphore, DISPATCH_TIME_FOREVER);
     NSHashTable *copyDelegates = [_delegates copy];
     dispatch_semaphore_signal(_semaphore);
@@ -78,14 +86,18 @@
         if ([delegate respondsToSelector:selector]) {
             // must use duplicated invocation when you invoke with async (target)
             NSInvocation *dupInvocation = [self duplicateInvocation:invocation target:delegate];
-            if (_runInMainThread) {
-                dispatch_async(dispatch_get_main_queue(), ^{
-                    [dupInvocation invoke];
-                });
+            if (self.runAsynchronously) {
+                if (self.runInMainThread) {
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        [dupInvocation invoke];
+                    });
+                } else {
+                    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+                        [dupInvocation invoke];
+                    });
+                }
             } else {
-                dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-                    [dupInvocation invoke];
-                });
+                [dupInvocation invoke];
             }
         }
     }

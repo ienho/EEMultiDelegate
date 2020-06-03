@@ -13,36 +13,38 @@
 /// All delegate's methods will responds in async thread [default in main thread]
 ///
 /// ！！！
-/// Not support 'union' arguments,
+/// Not support arguments which type is 'union',
 /// because it will be cause a crash when call the method [NSMethodSignature signatureWithObjCTypes:]
 ///
 @interface EEMultiProxy : NSProxy
 
-/**
- By default (YES), the proxy will invoke methods in main thread
- */
+///
+/// By default (YES), the proxy will invoke methods in main thread,
+/// otherwise will invoke methods in a asyncronous thread
+///
+/// ！！！
+/// runInMainThread only works when this.runAsynchronously = YES
+///
 @property (nonatomic, assign) BOOL runInMainThread;
 
-/**
- Create a EEMultiProxy instance when you add the multicast delegate funciton to your class
+///
+/// By default (YES), the proxy will invoke methods asynchronously,
+/// otherwise will invoke methods in current synchronously
+///
+@property (nonatomic, assign) BOOL runAsynchronously;
 
- @return new instance
- */
+/// Create a instance when you add the multicast delegate funciton to your class
 + (EEMultiProxy *)proxy;
 
-/**
- Add a delegate to the list
- */
+/// Add a delegate to the list
+/// @param delegate : delegate
 - (void)addDelegate:(id)delegate;
 
-/**
- Remove a delegate from the list
- */
+/// Remove a delegate from the list
+/// @param delegate : delegate
 - (void)removeDelete:(id)delegate;
 
-/**
- Remove all delegates from the list
- */
+/// Remove all delegates from the list
 - (void)removeAllDelegates;
 
 @end

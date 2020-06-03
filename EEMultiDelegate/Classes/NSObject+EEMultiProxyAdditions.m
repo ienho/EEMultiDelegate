@@ -1,15 +1,15 @@
 //
-//  NSObject+EEMultiProxyAddition.m
+//  NSObject+EEMultiProxyAdditions.m
 //  EEMultiDelegate
 //
 //  Created by ian<https://github.com/ienho>. on 2019/7/8.
 //  Copyright © 2019 ian. All rights reserved.
 //
 
-#import "NSObject+EEMultiProxyAddition.h"
+#import "NSObject+EEMultiProxyAdditions.h"
 #import <objc/runtime.h>
 
-@implementation NSObject (EEMultiProxyAddition)
+@implementation NSObject (EEMultiProxyAdditions)
 
 #pragma mark - Public Methods
 
